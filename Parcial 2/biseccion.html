@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+<meta charset=" UTF-8">
+<title>Bisección</title>
+<link rel="shortcut icon" href="css/img/math.png">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/normalize.css">
+</head>
+<header>
+<h3>Método de Bisección</h3>
+
+</header>
+<body>
+<form class="datos" id="clean" name="" method="post">
+    <br>Función: </br><input class="textbox" type="text" name="" id="function" autofocus placeholder="Ej. (x^2 - x + 2)"> 
+    <br>Criterio de paro: </br><input class="textbox" type="text" name="" id="stopCriteria" placeholder="Ej. (0.38)"> 
+    <br>Límite inferior: </br><input class="textbox" type="text" name="" id="Xl" placeholder="Ej. (1)"> 
+    <br>Límite superior: </br><input class="textbox" type="text" name="" id="Xu" placeholder="Ej. (1.5)"> 
+    <input id="fxvalue" disabled="disabled" type="text" placeholder="Resultado" class="textboxResultados" name="fx" value="">
+    <input id="ePorcentual" disabled="disabled" type="text" placeholder="Error relativo porcentual" class="textboxResultados" name="Eporce" value="">
+    <button class="resultado" type="button"     onclick="interLineal()" >Resultado</button>
+    <button class="resultado" type="button" onclick="limpiar()" >Limpiar valores</button>
+</form>
+<script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
