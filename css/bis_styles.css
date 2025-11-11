@@ -1,0 +1,221 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+h4{
+  margin-bottom: 18px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card-title{
+  font-size: 26px;
+  margin: 6px 0 12px;
+  color: #0f3240;
+}
+
+/* page-title: main title above the card */
+.page-title{
+  font-size: 34px;
+  margin: 8px auto 8px;
+  color: #08323a;
+  text-align: left;
+  padding-left: 6px;
+  font-weight: 800;
+  width: 520px;
+  max-width: calc(100% - 40px);
+}
+
+/* function-group: inline fields inside the main card (not a separate card) */
+.function-group{
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.function-group .funcVar { width: 100%; }
+
+body{
+  text-align: center;
+  font-family: Arial;
+  background-color: #f7fda8; /* page background only */
+  color: #222;
+}
+
+label{
+  display:block;
+  margin: 8px 0 6px;
+  font-weight:600;
+  color:#222;
+  background: transparent;
+  padding: 6px 4px;
+}
+
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background: #24749c;
+  position:fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  margin-right: 15px;
+
+}
+.logo {
+  margin-left: 30px;
+}
+.logo a{
+  text-decoration: none;
+  color: aliceblue;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.navbar a {
+  display: block;
+  padding: 23px 20px;
+  color: rgb(166, 211, 251);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0.2rem;
+  border-radius: 1rem;
+}
+
+.navbar a:hover {
+  background: #410202;
+}
+.header{
+  display: block; /* allow normal flow so title stays visible */
+  justify-content: normal;
+  align-items: normal;
+}
+.header {
+  height: auto !important;
+  background:   #f7fda8 no-repeat center;
+  background-size: cover;
+}
+.title {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+p{
+  margin-bottom: 20px;
+  font-size: 22px;
+
+}
+.content {
+  height: auto;
+  display: block;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: stretch;
+  padding: 12px 0 40px;
+}
+.sau {
+  padding: 40px;
+  background: rgb(245, 219, 219);
+  
+}
+.box-container {
+  width: 520px;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 28px 26px;
+  background: #ffffffcc; /* slight translucency */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  font-size: 18px;
+}
+input{
+  height: 2.5rem;
+  width: 100%;
+  background: #fff;
+  text-align: left;
+  padding: 8px 12px;
+  margin: 0;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+}
+.funcVar { width: calc(33% - 12px); }
+.var { width: calc(50% - 12px); }
+.box-row {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.result {
+  background: linear-gradient(180deg,#47b04b,#2f8a36);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(47,138,54,0.22);
+}
+.result:hover { transform: translateY(-2px); }
+.reset {
+  background: #c4c4c4;
+  border: none;
+  color: #222;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* small responsive tweaks */
+@media (max-width:520px){
+  .funcVar, .var { width: 100%; }
+  .box-container{ padding: 18px; }
+}
+
+/* Back button used to return to index */
+.back-button {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg,#24749c,#1b5f78);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+.back-button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg,#1b5f78,#154a5a);
+}
