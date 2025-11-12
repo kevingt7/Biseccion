@@ -5,7 +5,7 @@ Desarrollada con **HTML, CSS y JavaScript**, permite ingresar datos, ejecutar lo
 
 ## 🚀 Uso
 Abre `index.html` o visita la versión en GitHub Pages:  
-👉 https://kevingt7.github.io/BISECCION/
+👉https://kevingt7.github.io/Biseccion/
 
 ## 🧩 Contenido
 - `biseccion.html` – método de bisección  
