@@ -1,66 +1,85 @@
 <!DOCTYPE html>
-  <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-  <link rel="stylesheet" href="css/bis_styles.css"  type="text/css" />
-  <script type="text/javascript" src="js/bisection.js"></script>
-        <title>Método de bisección </title>
-    </head>
-    <body>
-    <header class="content header">
-      <div style="width:100%; display:flex; justify-content:flex-start; padding:12px 24px; box-sizing:border-box;">
-        <a href="index.html" class="back-button">← Volver al inicio</a>
-      </div>
-      <div id="Bisection"> 
-        <h2 class="page-title">Bisección</h2>
-        <div class= "box-container" id="bisectionForm">
-          <label for="xL">Límite inferior : </label>
-          <input type="number" id="xL" name="xL" value="0" class="var" step="any"><br></br>
-          <label for="xU">Límite superiror : </label>
-          <input type="number" id="xU" name="xU" value="0" class="var" step="any">
-          <div id="function">
-            <div class="function-group" id="functionInputs">
-                  <label for="xSqr">f(x):  </label>
-                  <input type="number" id="xSqr" name="xSqr" value="0" class="funcVar" step="any">
-                  <label for="xSqr"> X&sup2; + </label>
-                  <input type="number" id="xLnl" name="xLnl" value="0" class="funcVar" step="any">
-                  <label for="xLnl"> X + </label>
-                  <input type="number" id="indVal" name="indVal" value="0" class="funcVar" step="any">
-            </div>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método de Bisección</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/bis_styles.css" type="text/css" />
+
+  <!-- Script JS -->
+  <script src="js/bisection.js" defer></script>
+</head>
+<body>
+  <header class="content header">
+    <!-- Botón de regreso -->
+    <div style="width:100%; display:flex; justify-content:flex-start; padding:12px 24px; box-sizing:border-box;">
+      <a href="index.html" class="back-button">← Volver al inicio</a>
+    </div>
+
+    <div id="Bisection">
+      <h2 class="page-title">Método de Bisección</h2>
+
+      <div class="box-container" id="bisectionForm">
+
+        <label for="xL">Límite inferior:</label>
+        <input type="number" id="xL" name="xL" value="0" class="var" step="any">
+
+        <label for="xU">Límite superior:</label>
+        <input type="number" id="xU" name="xU" value="0" class="var" step="any">
+
+        <div id="function">
+          <div class="function-group" id="functionInputs">
+            <label for="xSqr">f(x):</label>
+            <input type="number" id="xSqr" name="xSqr" value="0" class="funcVar" step="any">
+            <label>X² +</label>
+            <input type="number" id="xLnl" name="xLnl" value="0" class="funcVar" step="any">
+            <label>X +</label>
+            <input type="number" id="indVal" name="indVal" value="0" class="funcVar" step="any">
           </div>
-          <div>
-            <label for="stopMethods">Criterio de paro: </label>
-            <select name="stopMethods" id="stopMethods">
-              <option value="0">Porcentaje</option>
-              <option value="1">Iteraciones</option>
-            </select>
-          </div>
-          <div id="criteriaMethod">
-            <label for="criteria">Porcentaje: </label>
-            <input type="number" id="criteria" name="criteria" value="0" class="var" step="any"> <label> % </label>
-          </div>
-          <div id="iterationMethod" style="display: none;">
-            <label for="iteration">Número de iteraciones: </label>
-            <input type="number" id="iteration" name="iteration" value="0" class="var" step="any">
-          </div>
-          <!--<table>  //HAY QUE ESCONDER ESTO DE MIENTRAS
-              <tr>
-                <td id="column1">x</td>
-                <td id="column2">f(x)</td>
-              </tr>
-            </table>-->
-          <div>
-            <label for="root">Raíz aproximada: </label>
-            <input type="text" id="root" name="root"  class="var" readonly>
-          </div>
-          <button type="button" value="Submit" class="result" id="resultBisec">Calcular f(x)</button>
-          <button type="button" value="Resetear" class="reset" id="reset">Resetear Valores</button>
+        </div>
+
+        <div>
+          <label for="stopMethods">Criterio de paro:</label>
+          <select name="stopMethods" id="stopMethods">
+            <option value="0">Porcentaje</option>
+            <option value="1">Iteraciones</option>
+            <option value="2">Error fijo (0.001)</option>
+          </select>
+        </div>
+
+        <div id="criteriaMethod">
+          <label for="criteria">Porcentaje:</label>
+          <input type="number" id="criteria" name="criteria" value="0" class="var" step="any">
+          <label>%</label>
+        </div>
+
+        <div id="iterationMethod" style="display:none;">
+          <label for="iteration">Número de iteraciones:</label>
+          <input type="number" id="iteration" name="iteration" value="0" class="var" step="any">
+        </div>
+
+        <div>
+          <label for="root">Raíz aproximada:</label>
+          <input type="text" id="root" name="root" class="var" readonly>
+        </div>
+
+        <!-- Botones -->
+        <div class="buttons-row">
+          <button type="button" class="result" id="resultBisec">Calcular f(x)</button>
+          <button type="button" class="reset" id="reset">Resetear Valores</button>
+        </div>
+
+        <!-- Mensajes de advertencia -->
+        <div class="warnings">
+          <p id="Warningnumber" style="display:none; color:red;">⚠️ Ingresa solo números válidos.</p>
+          <p id="Warningpercentaje" style="display:none; color:red;">⚠️ El porcentaje debe ser mayor a 0.</p>
+          <p id="Warningiterationin" style="display:none; color:red;">⚠️ Las iteraciones deben ser enteras y positivas.</p>
+          <p id="Warningsame" style="display:none; color:red;">⚠️ xₗ y xᵤ no pueden ser iguales.</p>
         </div>
       </div>
-      </header>
-        </div>
-    </section>
-    </body>
-  </html>
+    </div>
+  </header>
+</body>
+</html>
